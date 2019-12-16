@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Question from '../components/Question';
 
 export default class Questions extends Component {
   state = {
-    questions: null
+    questions: null,
+    incrementor: 0
   }
 
   getQuestions = () => {
@@ -14,11 +16,16 @@ export default class Questions extends Component {
       questions: data.results
     }))
   }
-  
+
+  incrementor = () => {
+    this.setState({incrementor: this.state.incrementor + 1})
+  }
+
   componentDidMount() {
     this.getQuestions()
 
   }
+
 
   render() {
     return (
@@ -26,10 +33,12 @@ export default class Questions extends Component {
         <p>I am Questions</p>
         <p>{this.props.properties.category}</p>
         <p>{this.props.properties.difficulty}</p>
-
-        {this.state.questions !== null ? this.state.questions.map((question, index) => (
-          <p key={index}>{question.question}</p>
-        )) : null}
+        {/* {this.state.questions !== null ? this.state.questions[this.state.incrementor].question : null} */}
+        {this.state.questions !== null ? <Question question={this.state.questions[this.state.incrementor]}/> : null}
+        <button onClick={this.incrementor}>Next</button>
+        {/* {this.state.questions !== null ? this.state.questions.map((question, index) => ( */}
+          {/* <p key={index}>{question.question}</p>
+        )) : null} */}
       </div>
     )
   }
