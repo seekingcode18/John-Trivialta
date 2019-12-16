@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import SetUp from '../components/SetUp';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <Route path="/questions">
             <p>This is the questions page</p>
+            <SetUp />
           </Route>
 
           <Route path="/">
