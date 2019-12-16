@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 export default class SetUp extends Component {
 
@@ -18,7 +19,6 @@ export default class SetUp extends Component {
     componentDidMount () {
         this.getCategories();
     }
-
 
 
     render() {
@@ -41,7 +41,7 @@ export default class SetUp extends Component {
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
                     </select>
-                    <button type="submit">Submit</button>
+                    <Link to="/questions" type="submit">Submit</Link>
                 </form>
             </div>
         )

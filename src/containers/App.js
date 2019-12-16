@@ -54,7 +54,7 @@ export default class App extends Component {
         <Switch>
           <Route path="/questions">
             <p>This is the questions page</p>
-            <Questions />
+            <Questions properties={this.state} />
           </Route>
 
           <Route path="/">
