@@ -6,11 +6,13 @@ import {
   Link
 } from "react-router-dom";
 import SetUp from '../components/SetUp';
+import Questions from '../containers/Questions'
 
 export default class App extends Component {
   state = {
-    category: null,
-    difficulty: null
+    category: 'General Knowledge',
+    difficulty: 'Easy',
+    setupComplete: false
   }
 
   handleCategory (e) {
@@ -23,8 +25,18 @@ export default class App extends Component {
     this.setState({difficulty: e.target.value})
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault(); //  to be deleted
+    console.log('submit setupJS', this.state); // this function attaches the addSearch func from app to homepage. this console is to make sure handle change worked
+    this.setState({setupComplete: !this.state.setupComplete})
+  }
+
   componentDidMount() {
-    // console.log(this.state)
+    console.log('cDM appjs', this.state)
+  }
+
+  componentDidUpdate() {
+    console.log('cDU appjs', this.state)
   }
 
   render() {
@@ -42,11 +54,12 @@ export default class App extends Component {
         <Switch>
           <Route path="/questions">
             <p>This is the questions page</p>
+            <Questions />
           </Route>
 
           <Route path="/">
             <p>this is the home page</p>
-            <SetUp handleCategory={this.handleCategory.bind(this)} handleDifficulty={this.handleDifficulty.bind(this)}/>
+            <SetUp handleCategory={this.handleCategory.bind(this)} handleDifficulty={this.handleDifficulty.bind(this)} handleSubmit={this.handleSubmit.bind(this)} />
           </Route>
         </Switch>
       </div>
