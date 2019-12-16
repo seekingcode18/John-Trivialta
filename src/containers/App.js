@@ -10,8 +10,8 @@ import Questions from '../containers/Questions'
 
 export default class App extends Component {
   state = {
-    category: 'General Knowledge',
-    difficulty: 'Easy',
+    category: 9,
+    difficulty: 'easy',
     setupComplete: false
   }
 

@@ -31,16 +31,17 @@ export default class SetUp extends Component {
                     <select onChange={this.props.handleCategory}>
                         {/* ternary operator to make sure that the mapping happens after setting state to avoid error of null */}
                         {this.state.categories !== null ? this.state.categories.map(category => (
-                            <option key={category.id} value={category.name}>{category.name}</option>
+                            <option key={category.id} value={category.id}>{category.name}</option>
                         )) : null}
                     </select>
                     <br/>
                     <h5>What difficulty would you like?</h5>
                     <select id="difficulty" onChange={this.props.handleDifficulty}>
-                        <option value="Easy" defaultValue="selected">Easy</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Hard">Hard</option>
+                        <option value="easy" defaultValue="selected">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
                     </select>
+                    <br/><br/>
                     <Link to="/questions" type="submit">Submit</Link>
                 </form>
             </div>
