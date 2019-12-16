@@ -14,6 +14,21 @@
 ## Layout:
 
 ## Plan of action:
+* The aim is to make the quiz work for one user first
+
+### SetUp component
+* Make a SetUp component which will fetch the categories and difficulty
+* Push the state up to App
+* Console log the state to ensure that the information has passed through successfully
+
+### Questions container
+* Make a Questions class container
+* Fetch the quiz questions from the questions API
+* Press the button to loop through the questions
+* Implement functionality to check if the question has been answered correctly
+
+* Make a counter to track the number of correct responses
+* Display the results
 
 ## Methodology:
 
