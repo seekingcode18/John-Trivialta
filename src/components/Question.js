@@ -6,15 +6,16 @@ export default function Question(props) {
   
   let incorrect = props.question.incorrect_answers.map(answer => ({ isCorrect : false , answer : answer }))
 
+  // putting answers into to a new single answers array with a spread operator as objects so we can identify which is correct
   let answers = [correct, ...incorrect]
 
   console.log(answers)
 
+  console.log(shuffle(answers))
+
   function shuffle (array) {
     return array.sort(() => Math.random() - 0.5)
   }
-
-  let array = [1 , 2 , 3, 4]
 
 
   return (
@@ -24,7 +25,6 @@ export default function Question(props) {
       <p>{props.question.incorrect_answers[0]}</p>
       <p>{props.question.incorrect_answers[1]}</p>
       <p>{props.question.incorrect_answers[2]}</p>
-      {    console.log(shuffle(array))}
     </div>
   )
 }
