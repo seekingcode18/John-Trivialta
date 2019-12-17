@@ -1,4 +1,5 @@
 import React from 'react'
+import Answer from './Answer';
 
 export default function Question(props) {
 
@@ -26,7 +27,7 @@ export default function Question(props) {
       <p>{props.question.question}</p>
 
       {answers.map((answer, index) => (
-        <p id={answer.isCorrect.toString()} className={answer.answer} style={{backgroundColor: "white"}} onClick={checkAnswer} key={index}>{answer.answer}</p>
+        <Answer isCorrect={answer.isCorrect.toString()} handleClick={checkAnswer} key={index} text={answer.answer} />
       ))}
 
       <p className="answer"></p>
