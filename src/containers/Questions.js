@@ -5,42 +5,46 @@ export default class Questions extends Component {
   state = {
     questions: null,
     incrementor: 0,
-    hasBeenClicked: false
+    hasBeenClicked: false,
   }
 
   getQuestions = () => {
     let API = `https://opentdb.com/api.php?amount=10&category=${this.props.properties.category}&difficulty=${this.props.properties.difficulty}&type=multiple`
     fetch(API)
     .then(data => data.json())
-    // .then(data => console.log(data.results))
+    .then(data => data.results)
+    .then(data => {
+      let shuffledData = data.map(question => {
+        let shuffledAnswers = ([{isCorrect : true, answer : question.correct_answer}, ...question.incorrect_answers.map(answer => ({ isCorrect : false , answer : answer }))]).sort(() => Math.random() - 0.5)
+        return {
+          question: question.question,
+          answers: shuffledAnswers
+        }
+      })
+      return shuffledData
+    })
     .then(data => this.setState({
-      questions: data.results
+      questions: data
     }))
   }
 
-
-  // resetColour: resets background state
+  shuffle(array) {
+    return array.sort(() => Math.random() - 0.5)
+  }
 
   incrementor = () => {
     console.log('incrementor()')
     this.setState({incrementor: this.state.incrementor + 1})
-    // this.forceUpdate()
     this.setState({hasBeenClicked : false})
-// resetColour()
   }
 
   componentDidMount() {
     this.getQuestions()
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(this.state.hasBeenClicked)
-  }
 
   clicked () {
-    console.log('I was clicked')
     this.setState({hasBeenClicked : true})
-    console.log('Qs state in clicker', this.state.hasBeenClicked)
   }
 
   render() {
@@ -49,12 +53,10 @@ export default class Questions extends Component {
         <p>I am Questions</p>
         <p>{this.props.properties.category}</p>
         <p>{this.props.properties.difficulty}</p>
-        {/* {this.state.questions !== null ? this.state.questions[this.state.incrementor].question : null} */}
-        {this.state.questions !== null ? <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} /> : null}
-        {/* <button onClick={this.incrementor}>Next</button> */}
-        {/* {this.state.questions !== null ? this.state.questions.map((question, index) => ( */}
-          {/* <p key={index}>{question.question}</p>
-        )) : null} */}
+        {this.state.questions !== null ? 
+          <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} /> 
+          : null
+        }
       </div>
     )
   }
