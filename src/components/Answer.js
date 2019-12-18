@@ -10,9 +10,12 @@ export default class Answer extends React.Component {
     static getDerivedStateFromProps(nextProps, prevState) {
         console.log('Answer.js getDerivedState')
         // if next has been clicked, do this return statement, else do nothing
-        return {
-            background: nextProps.background
-        };
+        if (nextProps.hasbeenclicked === false) {
+            return {
+                background: nextProps.background
+                // background: null
+            };
+        }
     }
 
 // componentDidMount() {
@@ -49,7 +52,7 @@ export default class Answer extends React.Component {
     render() {
         return (
             <div>
-            <p id={this.props.isCorrect} className={this.state.background} onClick={this.props.clicker}
+            <p id={this.props.isCorrect} className={this.state.background} onClick={this.props.clicker} onClickCapture={this.updateColour.bind(this)}
             >{this.props.text}</p>
         </div>
     )

@@ -21,9 +21,12 @@ export default class Question extends React.Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     return {
-     answers: (([{isCorrect : true, answer : nextProps.question.correct_answer}, ...nextProps.question.incorrect_answers.map(answer => ({ isCorrect : false , answer : answer }))]).sort(() => Math.random() - 0.5))
+      // this sets the answers each time you go to a new question
+      // BUG: it shuffles them every time you click an answer
+     answers: [{isCorrect : true, answer : nextProps.question.correct_answer}, ...nextProps.question.incorrect_answers.map(answer => ({ isCorrect : false , answer : answer }))]
     };
    }
+  //  .sort(() => Math.random() - 0.5))
 
 
   componentDidMount() {
@@ -58,7 +61,7 @@ export default class Question extends React.Component {
         {/* answers don't update on clicking Next because Q.js state doesn't change */}
         {/* see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#fetching-external-data-when-props-change */}
         {this.state.answers !== null ? this.state.answers.map((answer, index) => (
-          <Answer isCorrect={answer.isCorrect.toString()} background={this.state.background} key={index} updateColour={this.updateColour.bind(this)} text={answer.answer} clicker={this.props.clicker} />
+          <Answer isCorrect={answer.isCorrect.toString()} background={this.state.background} key={index} updateColour={this.updateColour.bind(this)} hasbeenclicked={this.props.hasbeenclicked} text={answer.answer} clicker={this.props.clicker} />
           ))
         :null }
         <button onClick={this.props.button}>Next</button>
