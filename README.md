@@ -14,24 +14,43 @@
 ## Layout:
 
 ## Plan of action:
-* The aim is to make the quiz work for one user first
+[x] The aim is to make the quiz work for one user first
+[ ] Test
+[ ] Refactor & comment
+[ ] Style
+[ ] Implement 2nd user feature
+[ ] Presentation
 
 ### SetUp component
-* [x] Make a SetUp component which will fetch the categories and difficulty
-* [x] Push the state up to App
-* [x] Console log the state to ensure that the information has passed through successfully
+[x] Make a SetUp component which will fetch the categories and difficulty
+[x] Push the state up to App
+[x] Console log the state to ensure that the information has passed through successfully
 
 ### Questions container
-* [x] Make a Questions class container
-* [x] Fetch the quiz questions from the questions API
-* [x] Press the button to loop through the questions
-* Implement functionality to check if the question has been answered correctly
-* Make a counter to track the number of correct responses
-* Display the results
+[x] Make a Questions class container
+[x] Fetch the quiz questions from the questions API
+[x] Press the button to loop through the questions
+[x] Implement functionality to check if the question has been answered correctly
+[x] Make a counter to track the number of correct responses
+[x] Display the results
+
+
 
 ## Methodology:
+Planning
+Replanning
+Bug fixing
+Daily standups
 
 ## Technologies used:
+* Javascript
+* JSX
+* React
+* React Router DOM
+* Git & Github
+* Enzyme
+* Jest
+* CSS
 
 ## Contributors:
 Aaron (AaronM97)
