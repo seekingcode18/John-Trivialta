@@ -6,6 +6,7 @@ export default class Questions extends Component {
     questions: null,
     incrementor: 0,
     hasBeenClicked: false,
+    score: 0
   }
 
   getQuestions = () => {
@@ -14,11 +15,12 @@ export default class Questions extends Component {
     .then(data => data.json())
     .then(data => data.results)
     .then(data => {
-      let shuffledData = data.map(question => {
+      let shuffledData = data.map((question, index) => {
         let shuffledAnswers = ([{isCorrect : true, answer : question.correct_answer}, ...question.incorrect_answers.map(answer => ({ isCorrect : false , answer : answer }))]).sort(() => Math.random() - 0.5)
         return {
           question: question.question,
-          answers: shuffledAnswers
+          answers: shuffledAnswers,
+          id: index
         }
       })
       return shuffledData
@@ -53,7 +55,7 @@ export default class Questions extends Component {
         <p>{this.props.properties.category}</p>
         <p>{this.props.properties.difficulty}</p>
         {this.state.questions !== null ? 
-          <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} /> 
+          <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} score={this.state.score} /> 
           : null
         }
       </div>
