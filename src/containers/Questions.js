@@ -59,18 +59,10 @@ export default class Questions extends Component {
   render() {
     return (
       <div>
-        <p>I am Questions</p>
-        <p>{this.props.properties.category}</p>
-        <p>{this.props.properties.difficulty}</p>
-        {/* {this.state.questions !== null ?
-          <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} score={this.state.score} />
-          : null
-        } */}
         {this.state.incrementor !== 10 ?
         this.state.questions !== null ? <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} score= {this.state.score} /> : null
         : <Results score={this.state.score} />
         }
-        {/* {this.state.showResults ? <h1>results!</h1> : null} */}
       </div>
     )
   }
