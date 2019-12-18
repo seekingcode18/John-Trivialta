@@ -6,9 +6,12 @@ export default class Question extends React.Component {
     background: "white" // pass this new state down to Answer to use as class on <p>
   }
 
-  componentDidMount() {
-    console.log(this.props.question)
-  }
+  // componentDidMount() {
+  //   console.log(this.props.question)
+  // }
+  // componentDidUpdate() {
+  //   console.log(this.props.question)
+  // }
 
   render() {
     return (

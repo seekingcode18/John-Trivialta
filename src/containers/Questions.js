@@ -43,9 +43,14 @@ export default class Questions extends Component {
     this.getQuestions()
   }
 
-
-  clicked () {
+  // this is to change the state to true when you click an answer
+  clicked (e) {
     this.setState({hasBeenClicked : true})
+    if (e.target.id === 'true') {
+      this.setState({score: this.state.score +1})
+    }
+    // e.target.id === 'true' ? this.setState({score: this.state.score +1}) : null
+    console.log(this.state.score)
   }
 
   render() {

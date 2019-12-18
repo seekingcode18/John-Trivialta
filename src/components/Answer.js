@@ -15,6 +15,7 @@ export default class Answer extends React.Component {
                 background: nextProps.background
             };
         }
+        return null
     }
 
    checkAnswer (e) {
