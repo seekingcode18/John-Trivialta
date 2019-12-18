@@ -43,22 +43,14 @@ export default class App extends Component {
     return (
       <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-        </nav>
+        <Link to="/"><h2>John Trivialta</h2></Link>
 
         <Switch>
           <Route path="/questions">
-            <p>This is the questions page</p>
             <Questions properties={this.state} />
           </Route>
 
           <Route path="/">
-            <p>this is the home page</p>
             <SetUp handleCategory={this.handleCategory.bind(this)} handleDifficulty={this.handleDifficulty.bind(this)} handleSubmit={this.handleSubmit.bind(this)} />
           </Route>
         </Switch>
