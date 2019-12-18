@@ -42,7 +42,7 @@ export default class SetUp extends Component {
                         <option value="hard">Hard</option>
                     </select>
                     <br/><br/>
-                    <Link to="/questions" type="submit">Submit</Link>
+                    <a href="/questions" type="submit">Submit</a>
                 </form>
             </div>
         )
