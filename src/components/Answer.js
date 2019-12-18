@@ -20,13 +20,15 @@ export default class Answer extends React.Component {
 
    // In Questions and brought down through props
    checkAnswer (e) {
-        if (e.target.id === "true") {
-            this.setState({background: "green"})
+       if (!this.props.hasbeenclicked) {
+           if (e.target.id === "true") {
+               this.setState({background: "green"})
+            }
+            if (e.target.id === "false") {
+                this.setState({background: "red"})
+            }
         }
-        if (e.target.id === "false") {
-            this.setState({background: "red"})
-        }
-      }
+    }
 
     // updateColour(e) {
     //     // e.target.classList.add("red")
