@@ -33,7 +33,6 @@ export default class Questions extends Component {
   }
 
   incrementor = () => {
-    console.log('incrementor()')
     this.setState({incrementor: this.state.incrementor + 1})
     this.setState({hasBeenClicked : false})
   }
