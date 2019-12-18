@@ -58,7 +58,7 @@ export default class Question extends React.Component {
         {/* answers don't update on clicking Next because Q.js state doesn't change */}
         {/* see https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html#fetching-external-data-when-props-change */}
         {this.state.answers !== null ? this.state.answers.map((answer, index) => (
-          <Answer isCorrect={answer.isCorrect.toString()} background={this.state.background} key={index} updateColour={this.updateColour.bind(this)} text={answer.answer} />
+          <Answer isCorrect={answer.isCorrect.toString()} background={this.state.background} key={index} updateColour={this.updateColour.bind(this)} text={answer.answer} clicker={this.props.clicker} />
           ))
         :null }
         <button onClick={this.props.button}>Next</button>
