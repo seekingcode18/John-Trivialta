@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Question from '../components/Question';
+import Results from '../components/Results';
 
 export default class Questions extends Component {
   state = {
     questions: null,
     incrementor: 0,
     hasBeenClicked: false,
-    score: 0
+    score: 0,
+    showResults: false
   }
 
   getQuestions = () => {
@@ -35,6 +37,8 @@ export default class Questions extends Component {
   }
 
   incrementor = () => {
+    // check to see if you've reached the end?
+
     this.setState({incrementor: this.state.incrementor + 1})
     this.setState({hasBeenClicked : false})
   }
@@ -47,9 +51,8 @@ export default class Questions extends Component {
   clicked (e) {
     this.setState({hasBeenClicked : true})
     if (e.target.id === 'true') {
-      this.setState({score: this.state.score +1})
+      this.setState({score: this.state.score + 1})
     }
-    // e.target.id === 'true' ? this.setState({score: this.state.score +1}) : null
     console.log(this.state.score)
   }
 
@@ -59,10 +62,15 @@ export default class Questions extends Component {
         <p>I am Questions</p>
         <p>{this.props.properties.category}</p>
         <p>{this.props.properties.difficulty}</p>
-        {this.state.questions !== null ? 
-          <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} score={this.state.score} /> 
+        {/* {this.state.questions !== null ?
+          <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} score={this.state.score} />
           : null
+        } */}
+        {this.state.incrementor !== 10 ?
+        this.state.questions !== null ? <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} score= {this.state.score} /> : null
+        : <Results score={this.state.score} />
         }
+        {/* {this.state.showResults ? <h1>results!</h1> : null} */}
       </div>
     )
   }
