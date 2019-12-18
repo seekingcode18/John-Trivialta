@@ -1,54 +1,57 @@
-// import React from 'react'
+import React, {useState} from 'react';
+import './Answer.css';
+import { render } from 'enzyme';
 
-// export default function Answer(props) {
-//     return (
-//         <div>
-//             <p id={props.isCorrect} onClick={props.handleClick} style={{backgroundColor: "white"}} >{props.text}</p>
-//         </div>
-//     )
+export default class Answer extends React.Component {
+    state = {
+        background: this.props.background
+    }
+
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('Answer.js getDerivedState')
+        // if next has been clicked, do this return statement, else do nothing
+        return {
+            background: nextProps.background
+        };
+    }
+
+// componentDidMount() {
+//     console.log('Answer.js componentDidMount')
+//     this.setState({background: this.props.background})
 // }
 
-import React, { Component } from 'react'
 
-export default class Answer extends Component {
-
-    state = {
-        background: "white"
-    }
-    // remove this state as state will be initialised in question.justify
-
+    // removed this state as state will be initialised in question.justify
     // make function for toggling classes green/red
     //   which will be wiped when question.js renders new <Answers />
 
-    // In Questions and brought down through props 
-   checkAnswer (e) {
-        if (e.target.id === "true") {
-        //   e.target.style.backgroundColor = "green";
-        // boolean true 
-        this.setState({ background: true})
-        // this.setState({background: "green"})
-        }
-        if (e.target.id === "false") {
-        //   e.target.style.backgroundColor = "red";
-        this.setState({ background: false})
-        // this.setState({background: "red"})
-        }
-      }
-
-    refresher(e) {
-        console.log(e.target)
+    // In Questions and brought down through props
+//    const checkAnswer = (e) => {
+//         if (e.target.id === "true") {
+//         //   e.target.style.backgroundColor = "green";
+//         // boolean true
+//         setState({ background: true})
+//         // setState({background: "green"})
+//         }
+//         if (e.target.id === "false") {
+//         //   e.target.style.backgroundColor = "red";
+//         setState({ background: false})
+//         // setState({background: "red"})
+//         }
+//       }
+    updateColour(e) {
+        // e.target.classList.add("red")
+        this.setState({background: "red"})
+        // e.target.classList.remove("white")
+        console.log(`updateColour(${this.state.background})`);
+        // e.target.className.add = "cyan";
     }
-    // {this.state !== {} ? console.log('hi') : console.log('bye')}
-  componentDidMount() {
-    // console.log('hi')
-    this.setState({background: "white"})
-  }
-
     render() {
         return (
             <div>
-                <p id={this.props.isCorrect} className={this.state.background ? "green" : "red" } onClick={this.checkAnswer} onLoad={this.refresher}>{this.props.text}</p>
-            </div>
-        )
-    }
+            <p id={this.props.isCorrect} className={this.state.background} onClick={this.updateColour.bind(this)}
+            >{this.props.text}</p>
+        </div>
+    )
+}
 }
