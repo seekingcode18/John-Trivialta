@@ -7,6 +7,13 @@ export default class Answer extends React.Component {
         background: this.props.background
     }
 
+    // decodes answers
+    decodeHtml(html) {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+    }
+
     // resets background of answers to white when you click next using the props from the parent state
     static getDerivedStateFromProps(nextProps, prevState) {
         console.log('Answer.js getDerivedState')
@@ -33,7 +40,7 @@ export default class Answer extends React.Component {
         return (
             <div>
             <p id={this.props.isCorrect} className={this.state.background} onClick={this.props.clicker} onClickCapture={this.checkAnswer.bind(this)}
-            >{this.props.text}</p>
+            >{this.decodeHtml(this.props.text)}</p>
         </div>
     )
 }

@@ -13,11 +13,18 @@ export default class Question extends React.Component {
   //   console.log(this.props.question)
   // }
 
+    // decodes questions
+    decodeHtml(html) {
+      const txt = document.createElement("textarea");
+      txt.innerHTML = html;
+      return txt.value;
+    }
+
   render() {
     return (
       <div>
         <p>You are on Question {this.props.question.id + 1}</p>
-        <p>{this.props.question.question}</p>
+        <p>{this.decodeHtml(this.props.question.question)}</p>
         {this.props.question.answers.map((answer, index) => (
             <Answer isCorrect={answer.isCorrect.toString()} background={this.state.background} key={index} hasbeenclicked={this.props.hasbeenclicked} text={answer.answer} clicker={this.props.clicker} />
             ))}
