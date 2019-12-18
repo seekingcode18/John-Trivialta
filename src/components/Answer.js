@@ -49,7 +49,7 @@ export default class Answer extends React.Component {
     render() {
         return (
             <div>
-            <p id={this.props.isCorrect} className={this.state.background} onClick={this.props.clicker.bind(this)}
+            <p id={this.props.isCorrect} className={this.state.background} onClick={this.props.clicker}
             >{this.props.text}</p>
         </div>
     )

@@ -36,10 +36,11 @@ export default class Questions extends Component {
   componentDidUpdate(prevProps, prevState) {
     console.log(this.state.hasBeenClicked)
   }
-  
+
   clicked () {
     console.log('I was clicked')
     this.setState({hasBeenClicked : true})
+    console.log('Qs state in clicker', this.state.hasBeenClicked)
   }
 
   render() {
@@ -49,7 +50,7 @@ export default class Questions extends Component {
         <p>{this.props.properties.category}</p>
         <p>{this.props.properties.difficulty}</p>
         {/* {this.state.questions !== null ? this.state.questions[this.state.incrementor].question : null} */}
-        {this.state.questions !== null ? <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked}/> : null}
+        {this.state.questions !== null ? <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)}/> : null}
         {/* <button onClick={this.incrementor}>Next</button> */}
         {/* {this.state.questions !== null ? this.state.questions.map((question, index) => ( */}
           {/* <p key={index}>{question.question}</p>
