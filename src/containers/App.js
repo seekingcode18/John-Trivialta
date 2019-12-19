@@ -10,7 +10,9 @@ import Questions from '../containers/Questions'
 
 export default class App extends Component {
   state = {
-    // set defaults in case user doesnt choose a category or difficulty
+    // set defaults in case user doesn't choose a category or difficulty
+    //   because fetch is run based on category and difficulty from App's state
+    //   which is set onChange of user inputs
     category: 9,
     difficulty: 'easy',
     setupComplete: false
