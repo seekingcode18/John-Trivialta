@@ -16,7 +16,6 @@ export default class Answer extends React.Component {
 
     // resets background of answers to white when you click next using the props from the parent state
     static getDerivedStateFromProps(nextProps, prevState) {
-        console.log('Answer.js getDerivedState')
         if (nextProps.hasbeenclicked === false) {
             return {
                 background: nextProps.background

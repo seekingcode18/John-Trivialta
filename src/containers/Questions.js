@@ -53,7 +53,6 @@ export default class Questions extends Component {
     if (e.target.id === 'true') {
       this.setState({score: this.state.score + 1})
     }
-    console.log(this.state.score)
   }
 
   render() {

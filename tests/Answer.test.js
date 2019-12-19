@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../src/containers/App';
+import Answer from '../src/components/Answer';
 
-describe('renders App without creashing', () => {
+describe('renders Answer.js without crashing', () => {
     it('smoke test', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<App />, div);
+        ReactDOM.render(<Answer />, div);
         ReactDOM.unmountComponentAtNode(div);
     })
 })
