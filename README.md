@@ -15,7 +15,7 @@
 
 ## Plan of action:
 [x] The aim is to make the quiz work for one user first
-[ ] Test
+[ ] Test & snapshot test
 [ ] Refactor & comment
 [ ] Style
 [ ] Implement 2nd user feature
