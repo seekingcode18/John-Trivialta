@@ -56,6 +56,7 @@ export default class Questions extends Component {
   }
 
   render() {
+    console.log(this.state.questions)
     return (
       <div>
         {this.state.incrementor !== 10 ?
