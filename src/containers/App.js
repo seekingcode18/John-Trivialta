@@ -24,13 +24,10 @@ export default class App extends Component {
     this.setState({difficulty: e.target.value})
   }
 
-<<<<<<< HEAD
   handleSubmit = (e) => {
     this.setState({setupComplete: !this.state.setupComplete})
   }
 
-=======
->>>>>>> f4b58953286c548cadcc85902b6e93f700936cba
   render() {
     return (
       <Router>
