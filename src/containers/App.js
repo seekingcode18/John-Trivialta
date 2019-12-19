@@ -10,6 +10,7 @@ import Questions from '../containers/Questions'
 
 export default class App extends Component {
   state = {
+    // set defaults in case user doesnt choose a category or difficulty
     category: 9,
     difficulty: 'easy',
     setupComplete: false
@@ -23,10 +24,13 @@ export default class App extends Component {
     this.setState({difficulty: e.target.value})
   }
 
+<<<<<<< HEAD
   handleSubmit = (e) => {
     this.setState({setupComplete: !this.state.setupComplete})
   }
 
+=======
+>>>>>>> f4b58953286c548cadcc85902b6e93f700936cba
   render() {
     return (
       <Router>
@@ -39,7 +43,7 @@ export default class App extends Component {
           </Route>
 
           <Route path="/">
-            <SetUp handleCategory={this.handleCategory.bind(this)} handleDifficulty={this.handleDifficulty.bind(this)} handleSubmit={this.handleSubmit.bind(this)} />
+            <SetUp handleCategory={this.handleCategory.bind(this)} handleDifficulty={this.handleDifficulty.bind(this)} />
           </Route>
         </Switch>
       </div>

@@ -18,8 +18,13 @@ export default class Questions extends Component {
     .then(data => data.results)
     .then(data => {
       let shuffledData = data.map((question, index) => {
+        /* map allows you to access 1 question object at a time
+        make 1 array with the correct answer and all of the incorrect answers
+        shuffle those into a random order
+        */
         let shuffledAnswers = ([{isCorrect : true, answer : question.correct_answer}, ...question.incorrect_answers.map(answer => ({ isCorrect : false , answer : answer }))]).sort(() => Math.random() - 0.5)
         return {
+        // returns an object that contains only what we need from map
           question: question.question,
           answers: shuffledAnswers,
           id: index
@@ -32,12 +37,7 @@ export default class Questions extends Component {
     }))
   }
 
-  shuffle(array) {
-    return array.sort(() => Math.random() - 0.5)
-  }
-
   incrementor = () => {
-    // check to see if you've reached the end?
 
     this.setState({incrementor: this.state.incrementor + 1})
     this.setState({hasBeenClicked : false})
