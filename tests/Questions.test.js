@@ -40,10 +40,31 @@ describe('renders Questions without crashing', () => {
     })
 
     it('should run the fetch after getQuestions() is called', () => {
+        const wrapper = shallow(<Questions properties={simulatedData} />);
+        // instance() of wrapper
+        const instance = wrapper.instance();
         // spy on getQuestions AND fetch
-        // instance() of wrapper ?
+        jest.spyOn(instance, 'getQuestions');
         // check getQuestions has been called once (may have to mock it)
+        instance.forceUpdate();
+        // expect(instance.getQuestions).toHaveBeenCalledTimes(1);
+        // jest.spyOn(instance, 'fetch');
+
+
+
+        const mockSuccessResponse = {};
+        const mockJsonPromise = Promise.resolve(mockSuccessResponse);
+        const mockFetchPromise = Promise.resolve({json: () => mockJsonPromise});
+
+        // const wrapper = shallow(<Questions />);
+        jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
+        instance.componentDidMount();
+
+        expect(global.fetch).toHaveBeenCalledTimes(1)
+
+
         // check fetch has been called once
+        // expect(instance.getQuestions).toHaveBeenCalledTimes(1);
     })
 
 
