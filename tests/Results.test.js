@@ -12,6 +12,10 @@ describe('renders Results.js without crashing', () => {
         ReactDOM.unmountComponentAtNode(div);
     });
 
+    it('should render correctly', () => {
+        expect(shallow(<Results />)).toMatchSnapshot();
+    })
+
     // sets a dummy data score. checks if we can find within a p tag the dummy data score
     it('renders the CORRECT score', () => {
         let simData = {score: 827234};

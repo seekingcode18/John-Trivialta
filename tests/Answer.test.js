@@ -10,6 +10,10 @@ describe('renders Answer.js without crashing', () => {
         ReactDOM.unmountComponentAtNode(div);
     })
 
+    it('should render correctly', () => {
+        expect(shallow(<Answer />)).toMatchSnapshot();
+    })
+
     it('calls decodeHtml() on render', () => {
         // shallow render Answer and spy on decodeHtml()
         //   then forceUpdate so we can check that it's been called on (re)render

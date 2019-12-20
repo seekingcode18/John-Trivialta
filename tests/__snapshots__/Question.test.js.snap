@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Question without crashing should render correctly 1`] = `
+<div>
+  <p
+    className="questionCounter"
+  >
+    You are on Question 
+    2
+     / 10
+  </p>
+  <p
+    className="questionQuestion"
+  >
+    On a dartboard, what number is directly opposite No. 1?
+  </p>
+  <Answer
+    background="white"
+    clicker={[MockFunction]}
+    hasbeenclicked={false}
+    isCorrect="true"
+    key="0"
+    text="19"
+  />
+  <Answer
+    background="white"
+    clicker={[MockFunction]}
+    hasbeenclicked={false}
+    isCorrect="false"
+    key="1"
+    text="15"
+  />
+  <Answer
+    background="white"
+    clicker={[MockFunction]}
+    hasbeenclicked={false}
+    isCorrect="false"
+    key="2"
+    text="12"
+  />
+  <Answer
+    background="white"
+    clicker={[MockFunction]}
+    hasbeenclicked={false}
+    isCorrect="false"
+    key="3"
+    text="20"
+  />
+  <button
+    onClick={[MockFunction]}
+  >
+    Skip
+  </button>
+  <p>
+    If you skip this question you get no score for it :(
+  </p>
+</div>
+`;

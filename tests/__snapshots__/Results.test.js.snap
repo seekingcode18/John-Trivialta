@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Results.js without crashing should render correctly 1`] = `
+<div>
+  <h1>
+    Results!!!!
+  </h1>
+  <p>
+    Your score is: 
+     / 10
+  </p>
+  <a
+    href="/"
+  >
+    <h4>
+      Start again
+    </h4>
+  </a>
+</div>
+`;
