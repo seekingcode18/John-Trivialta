@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Setup without crashing should render correctly 1`] = `
+<div
+  className="setup"
+>
+  <h3>
+    Set up your quiz
+  </h3>
+  <form>
+    <h5>
+      What category would you like?
+    </h5>
+    <select />
+    <br />
+    <h5>
+      What difficulty would you like?
+    </h5>
+    <select
+      id="difficulty"
+    >
+      <option
+        defaultValue="selected"
+        value="easy"
+      >
+        Easy
+      </option>
+      <option
+        value="medium"
+      >
+        Medium
+      </option>
+      <option
+        value="hard"
+      >
+        Hard
+      </option>
+    </select>
+    <br />
+    <br />
+    <a
+      href="/questions"
+      type="submit"
+    >
+      Submit
+    </a>
+  </form>
+</div>
+`;
