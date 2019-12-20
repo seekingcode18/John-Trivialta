@@ -77,5 +77,6 @@
 * CSS
 
 ## Contributors:
-Aaron (AaronM97) | Lauren (Yynx) | Christopher (seekingcode18)
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+Aaron ([@AaronM97](https://github.com/AaronM97 "Aaron's Github")) | Lauren ([@Yynx](https://github.com/Yynx "Lauren's Github")) | Christopher ([@seekingcode18](https://github.com/seekingcode18 "Christopher's Github"))
+
+
