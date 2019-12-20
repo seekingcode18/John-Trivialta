@@ -5,7 +5,7 @@ import Question from '../src/components/Question';
 import Enzyme, { shallow, mount } from 'enzyme';
 
 describe('renders Questions without crashing', () => {
-    
+
     let simulatedData
     let wrapper;
     ;
@@ -39,7 +39,14 @@ describe('renders Questions without crashing', () => {
         expect(instance.getQuestions).toHaveBeenCalledTimes(1);
     })
 
-    
+    it('should run the fetch after getQuestions() is called', () => {
+        // spy on getQuestions AND fetch
+        // instance() of wrapper ?
+        // check getQuestions has been called once (may have to mock it)
+        // check fetch has been called once
+    })
+
+
     // it('fetch has been called', () => {
     //     const mockSuccessResponse = {};
     //     const mockJsonPromise = Promise.resolve(mockSuccessResponse);
