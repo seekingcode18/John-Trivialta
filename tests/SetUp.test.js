@@ -10,6 +10,10 @@ describe('renders Setup without crashing', () => {
         ReactDOM.unmountComponentAtNode(div);
     });
 
+    it('should render correctly', () => {
+        expect(shallow(<SetUp />)).toMatchSnapshot();
+    })
+
     it('renders John Trivialta heading', () => {
         const wrapper = shallow(<SetUp />);
         let title = wrapper.find('h3');

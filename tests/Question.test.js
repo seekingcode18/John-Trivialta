@@ -28,6 +28,10 @@ describe('renders Question without crashing', () => {
         wrapper = shallow(<Question button={simFn} question={simData} clicker={simFn} hasbeenclicked={false} score={1} />);
     })
 
+    it('should render correctly', () => {
+        expect(wrapper).toMatchSnapshot();
+    })
+
     it('renders the correct question number', () => {
         expect(wrapper.find('.questionCounter').text()).toEqual('You are on Question 2 / 10');
     })
