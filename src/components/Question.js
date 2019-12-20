@@ -21,7 +21,6 @@ export default class Question extends React.Component {
         {this.props.question.answers.map((answer, index) => (
             <Answer isCorrect={answer.isCorrect.toString()} background={this.state.background} key={index} hasbeenclicked={this.props.hasbeenclicked} text={answer.answer} clicker={this.props.clicker} />
             ))}
-
         <button onClick={this.props.button} >{this.props.hasbeenclicked === true ? "Next" : "Skip"}</button>
         <p>{this.props.hasbeenclicked === true ? "" : "If you skip this question you get no score for it :("}</p>
       </div>
