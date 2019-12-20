@@ -37,7 +37,7 @@ export default class Answer extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="answer">
             <p id={this.props.isCorrect} className={this.state.background} onClick={this.props.clicker} onClickCapture={this.checkAnswer.bind(this)}
             >{this.decodeHtml(this.props.text)}</p>
         </div>
