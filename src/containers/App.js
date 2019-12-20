@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import SetUp from '../components/SetUp';
 import Questions from '../containers/Questions'
+import './App.css';
 
 export default class App extends Component {
   state = {
@@ -45,6 +46,7 @@ export default class App extends Component {
             <SetUp handleCategory={this.handleCategory.bind(this)} handleDifficulty={this.handleDifficulty.bind(this)} />
           </Route>
         </Switch>
+    
       </div>
     </Router>
     )

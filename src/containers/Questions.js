@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Question from '../components/Question';
 import Results from '../components/Results';
+import './Questions.css'
 
 export default class Questions extends Component {
   state = {
@@ -46,10 +47,12 @@ export default class Questions extends Component {
 
   render() {
     return (
-      <div>
+      <div className="question-container">
         {this.state.incrementor !== 10 ?
         this.state.questions !== null ? <Question button={this.incrementor} question={this.state.questions[this.state.incrementor]} clicker={this.clicked.bind(this)} hasbeenclicked={this.state.hasBeenClicked} score= {this.state.score} /> : null
         : <Results score={this.state.score} />}
+        {/* gif */}
+        <img className="john-travolta-gif" src="https://i.gifer.com/7VE.gif" alt="john travolta gif" />
       </div>
     )
   }

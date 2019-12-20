@@ -7,3 +7,10 @@
 .red {
   background: #ff2d2d;
 }
+
+p {
+  display: inline-blocks;
+  cursor: pointer;
+  padding: 5px 15px;
+  margin: 10px;
+}

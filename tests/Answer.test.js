@@ -33,15 +33,15 @@ describe('renders Answer.js without crashing', () => {
 
     })
 
-    it('state turns green on click', () => {
-        const simFn = jest.fn()
-        const wrapper = mount(<Answer isCorrect={'true'} background={'white'} key={100} hasbeenclicked={false} text={'hello'} clicker={simFn} />);
-        // const p = wrapper.find('p')
-        // expect(p).toHaveLength(1);
-        // p.simulate('clickCapture', {target: {id: "true"}});
-        wrapper.setState({background: "green"}, () => {
-            wrapper.forceUpdate()
-            expect(wrapper.state('background')).toEqual('green')
-        })
-    })
+    // it('state turns green on click', () => {
+    //     const simFn = jest.fn()
+    //     const wrapper = mount(<Answer isCorrect={'true'} background={'white'} key={100} hasbeenclicked={false} text={'hello'} clicker={simFn} />);
+    //     // const p = wrapper.find('p')
+    //     // expect(p).toHaveLength(1);
+    //     // p.simulate('clickCapture', {target: {id: "true"}});
+    //     wrapper.setState({background: "green"}, () => {
+    //         wrapper.forceUpdate()
+    //         expect(wrapper.state('background')).toEqual('green')
+    //     })
+    // })
 })
