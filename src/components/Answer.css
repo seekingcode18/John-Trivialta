@@ -9,8 +9,11 @@
 }
 
 .answer {
-  display: inline;
   cursor: pointer;
-  padding: 5px 15px;
-  margin: 10px;
+  margin: 22px;
+}
+
+.answer > p {
+  display: inline;
+  padding: 3px 15px;
 }

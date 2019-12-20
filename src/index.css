@@ -27,6 +27,25 @@ h5 {
   font-size: 20px;
 }
 
+p {
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+select {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 a, a:hover {
   text-decoration: none;
+  color: #846A6A;
+  font-size: 25px;
 }
