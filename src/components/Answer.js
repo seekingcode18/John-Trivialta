@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Answer.css';
-import { render } from 'enzyme';
 
 export default class Answer extends React.Component {
     state = {
