@@ -7,3 +7,13 @@
 .red {
   background: #ff2d2d;
 }
+
+.answer {
+  cursor: pointer;
+  margin: 22px;
+}
+
+.answer > p {
+  display: inline;
+  padding: 3px 15px;
+}

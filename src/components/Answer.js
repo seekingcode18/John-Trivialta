@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './Answer.css';
-import { render } from 'enzyme';
 
 export default class Answer extends React.Component {
     state = {
@@ -37,7 +36,7 @@ export default class Answer extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="answer">
             <p id={this.props.isCorrect} className={this.state.background} onClick={this.props.clicker} onClickCapture={this.checkAnswer.bind(this)}
             >{this.decodeHtml(this.props.text)}</p>
         </div>

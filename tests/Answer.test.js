@@ -47,5 +47,5 @@ describe('renders Answer.js without crashing', () => {
     //         wrapper.forceUpdate()
     //         expect(wrapper.state('background')).toEqual('green')
     //     })
-    //  })
+    // })
 })

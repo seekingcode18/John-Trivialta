@@ -7,12 +7,10 @@ import {
 } from "react-router-dom";
 import SetUp from '../components/SetUp';
 import Questions from '../containers/Questions'
+import './App.css';
 
 export default class App extends Component {
-  state = {
-    // set defaults in case user doesn't choose a category or difficulty
-    //   because fetch is run based on category and difficulty from App's state
-    //   which is set onChange of user inputs
+  state = { // the initial options on the select are set on state as if they are not clicked then no category/difficulty is sent up to App
     category: 9,
     difficulty: 'easy',
     setupComplete: false
@@ -35,16 +33,16 @@ export default class App extends Component {
       <Router>
       <div className="App">
         <Link to="/"><h2>John Trivialta</h2></Link>
-
+        
         <Switch>
           <Route path="/questions">
             <Questions properties={this.state} />
           </Route>
-
           <Route path="/">
             <SetUp handleCategory={this.handleCategory.bind(this)} handleDifficulty={this.handleDifficulty.bind(this)} />
           </Route>
         </Switch>
+    
       </div>
     </Router>
     )
